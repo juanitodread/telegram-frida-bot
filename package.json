@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "dotenv": "^2.0.0",
+    "giphy-api": "1.2.3",
     "telegraf": "3.6.4",
     "winston": "*"
   }
