@@ -1,0 +1,26 @@
+{
+  "name": "Frida-Bot",
+  "version": "1.0.0",
+  "description": "Simple Frida Chat Bot",
+  "private": true,
+  "author": "juanitodread",
+  "license": "apache-v2",
+  "scripts": {
+    "dev": "NODE_PATH=$NODE_PATH:. nodemon app.js",
+    "start": "NODE_PATH=$NODE_PATH:. node app.js",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "winston": "*",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "telegraf": "3.6.4",
+    "winston": "*"
+  }
+}
