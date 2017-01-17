@@ -13,34 +13,29 @@ app.hears('hi', ctx => ctx.reply('Hey there!'));
 
 app.on('sticker', ctx => ctx.reply('👍'));
 
-const msg = '...\n\nI will be giving you a smarter answer when my creator improve me :D - FridaBot';
-
 app.on('message', ctx => {
   const queryMsg = ctx.message.text;
 
-  if(queryMsg.toLowerCase().startsWith("frida busca")) {
-    const realMsg = ctx.message.text.toLowerCase().replace("frida busca", "");
+  if (queryMsg.toLowerCase().startsWith('frida busca')) {
+    const realMsg = ctx.message.text.toLowerCase().replace('frida busca', '');
     ctx.telegram.sendCopy(ctx.from.id, ctx.message);
 
     console.log(`IMAGEeeeee: ${GiphyWrapper.findImage(realMsg)}`);
 
     GiphyWrapper.findImage(realMsg).then(res => {
       console.log('Entrando a findImage promise');
-      //console.log(res);
-      //console.log(`Images found: ${JSON.stringify(res.data[0].images)}`);
-      //console.log(res.data[0].images.looping.mp4);
       const imgUrl = res.data[0].images.looping.mp4;
       console.log(`Image to RETURN: ${imgUrl}`);
-      console.log("Context: " + ctx);
+      console.log(`Context: ${ctx}`);
       ctx.replyWithVideo({
         url: imgUrl
       });
     }).catch(err => {
-      console.log("Error: " + err);
+      console.log(`Error: ${err}`);
       return err;
     });
   } else {
-      ctx.reply("Prueba buscando algo escribiendo: frida busca");
+    ctx.reply('Prueba buscando algo escribiendo: frida busca');
   }
 
 });
